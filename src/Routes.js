@@ -8,14 +8,15 @@ import Slidebar from "./components/SlideBar";
 import AdminLogin from "./adminPages/login";
 import { ProtectedRoute } from "./utils/helper";
 import {getAllDataApi} from './redux/actions';
-import {useDispatch} from 'react-redux';
+import {useDispatch,useSelector} from 'react-redux';
 
 export default function RoutesPage() {
   const dispatch=useDispatch();
+  const userDetails=useSelector((state)=>state.data.user)
 
-  useEffect(()=>{
-    getAllDataApi(dispatch);
-  },[])
+  // useEffect(()=>{
+  //   getAllDataApi(dispatch);
+  // },[])
   const handleProtectedRoutes = (Comp) => {
     return (
       <ProtectedRoute>
@@ -37,7 +38,7 @@ export default function RoutesPage() {
       <BrowserRouter>
         <Routes>
           <Route>
-            <Route path="/" element={publicRoutes(Display)} />
+            <Route path="/:userName/profile" element={publicRoutes(Display)} />
             <Route path="/admin" element={handleProtectedRoutes(AdminPage)} />
             <Route path="/adminLogin" element={publicRoutes(AdminLogin)} />
           </Route>

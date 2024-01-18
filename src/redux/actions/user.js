@@ -1,11 +1,11 @@
 import * as type from '../types';
 import axios from 'axios';
 
-export function getUserDetails(dispatch){
-    axios.get(`${process.env.REACT_APP_URL}/users`)
+export function getUserDetailsByUserName(dispatch,userName){
+    axios.get(`${process.env.REACT_APP_URL}/user/${userName}`)
     .then((res)=>{
-        let userDetails=res.data.filter((val)=>val.email=='thummaakhilasai@gmail.com')[0];
-        dispatch(handleUserSuccess(userDetails))
+        console.log(res)
+        if(res.data.length) dispatch(handleUserSuccess(res.data[0]))
     });
  }
 export const handleUserSuccess=(data)=>{

@@ -2,7 +2,7 @@ import * as type from '../types';
 import { getEducationDetails } from './education';
 import { getProjectDetails } from './project';
 import { getSkillDetails } from './skills';
-import { getUserDetails } from './user';
+// import { getUserDetails } from './user';
 
 export const userSelect=(state)=>state.data.userData;
 
@@ -14,7 +14,7 @@ export const getAllDataApi=(dispatch)=>{
     getEducationDetails(dispatch);
     getProjectDetails(dispatch);
     getSkillDetails(dispatch);
-    getUserDetails(dispatch);
+    // getUserDetails(dispatch);
 }
 /**
  * 
