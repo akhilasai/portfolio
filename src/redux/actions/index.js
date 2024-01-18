@@ -10,10 +10,10 @@ export const skillsSelect=(state)=>state.data.skillsData;
 
 export const projectSelect=(state)=>state.data.projectData;
 
-export const getAllDataApi=(dispatch)=>{
-    getEducationDetails(dispatch);
-    getProjectDetails(dispatch);
-    getSkillDetails(dispatch);
+export const getAllDataApi=(dispatch,id)=>{
+    getEducationDetails(dispatch,id);
+    getProjectDetails(dispatch,id);
+    getSkillDetails(dispatch,id);
     // getUserDetails(dispatch);
 }
 /**
