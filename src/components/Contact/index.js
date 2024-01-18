@@ -27,7 +27,8 @@ export default function Contact() {
       username: username.value,
       email: email.value,
       message: message.value,
-    });
+      
+    },process.env);
     const templateParams = {
       username: username.value,
       email: email.value,
@@ -239,7 +240,7 @@ export default function Contact() {
             <div className="mt-6 italic text-sm font-medium text-blue-500 ">
               <span className=" pl-1 ">Copyright</span>
               <CopyrightIcon className="cursor-pointer mx-1" />
-              <span>2023 Daniel Jebarson K</span>
+              <span>2024 TASPK</span>
             </div>
           </div>
         </div>
