@@ -1,8 +1,8 @@
 import * as type from '../types';
 import axios from 'axios';
 
-export function getProjectDetails(dispatch){
-    axios.get(`${process.env.REACT_APP_URL}/projects`)
+export function getProjectDetails(dispatch,id){
+    axios.get(`${process.env.REACT_APP_URL}/userProject/${id}`)
     .then((res)=>dispatch(handleProjectSuccess(res.data)));
 }
 

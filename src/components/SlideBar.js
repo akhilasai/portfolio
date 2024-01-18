@@ -31,7 +31,7 @@ export default function Slidebar() {
           data-aos="slide-right"
           data-aos-delay="200"
         >
-          <a href="/#">Home</a>
+          <a href="#">Home</a>
         </p>
         <p
           onClick={() => setSelect(1)}

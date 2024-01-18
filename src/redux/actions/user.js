@@ -2,7 +2,7 @@ import * as type from '../types';
 import axios from 'axios';
 
 export function getUserDetailsByUserName(dispatch,userName){
-    axios.get(`${process.env.REACT_APP_URL}/user/${userName}`)
+    axios.get(`${process.env.REACT_APP_URL}/userByName/${userName}`)
     .then((res)=>{
         console.log(res)
         if(res.data.length) dispatch(handleUserSuccess(res.data[0]))

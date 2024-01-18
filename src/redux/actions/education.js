@@ -8,7 +8,7 @@ import * as type from '../types';
  */
 
 export function getEducationDetails(dispatch,id){
-    axios.get(`${process.env.REACT_APP_URL}/education`)
+    axios.get(`${process.env.REACT_APP_URL}/userEducation/${id}`)
     .then((res)=>{
         dispatch(handleEducationSuccess(res.data))
     });

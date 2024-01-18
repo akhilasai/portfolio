@@ -1,8 +1,8 @@
 import * as type from '../types';
 import axios from 'axios';
 
-export function getSkillDetails(dispatch){
-    axios.get(`${process.env.REACT_APP_URL}/skills`)
+export function getSkillDetails(dispatch,id){
+    axios.get(`${process.env.REACT_APP_URL}/userSkill/${id}`)
     .then((res)=>dispatch(handleSkillSuccess(res.data)));
  }
 export const handleSkillSuccess=(data)=>{
