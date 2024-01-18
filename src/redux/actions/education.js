@@ -7,7 +7,7 @@ import * as type from '../types';
  * It will returns the data when connection made to the database and if data is present in the database then it retruns the data.
  */
 
-export function getEducationDetails(dispatch){
+export function getEducationDetails(dispatch,id){
     axios.get(`${process.env.REACT_APP_URL}/education`)
     .then((res)=>{
         dispatch(handleEducationSuccess(res.data))

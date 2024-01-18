@@ -12,11 +12,11 @@ import {useDispatch,useSelector} from 'react-redux';
 
 export default function RoutesPage() {
   const dispatch=useDispatch();
-  const userDetails=useSelector((state)=>state.data.user)
+  const userData=useSelector((state)=>state.data.userData)
 
-  // useEffect(()=>{
-  //   getAllDataApi(dispatch);
-  // },[])
+  useEffect(()=>{
+    if(userData?._id) getAllDataApi(dispatch,userData?._id);
+  },[userData._id])
   const handleProtectedRoutes = (Comp) => {
     return (
       <ProtectedRoute>
