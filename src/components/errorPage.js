@@ -1,11 +1,11 @@
 import React from "react";
 import "../components/errorPage.css";
 
-function errorPage() {
+function ErrorPage() {
   return (
     <div className="error-Container">
       <h2>Page Not Found</h2>
     </div>
   );
 }
-export default errorPage;
+export default ErrorPage;
