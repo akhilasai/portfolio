@@ -6,7 +6,7 @@ export function getUserDetailsByUserName(dispatch,userName){
     .then((res)=>{
         console.log(res)
         if(res.data.length) dispatch(handleUserSuccess(res.data[0]))
-        // else window.location.href='/errorPage'
+        else window.location.href='#/errorPage'
     });
  }
 export const handleUserSuccess=(data)=>{
