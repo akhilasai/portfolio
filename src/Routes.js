@@ -4,6 +4,11 @@ import App from "./App";
 import AdminPage from "./adminPages";
 import Layout from "./Layout/Layout";
 import Display from "./components/Display";
+import Home from "./components/Home";
+import About from "./components/About";
+import Resume from "./components/Resume";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 import Slidebar from "./components/SlideBar";
 import AdminLogin from "./adminPages/login";
 import { ProtectedRoute } from "./utils/helper";
@@ -29,7 +34,9 @@ export default function RoutesPage() {
     return (
       <Layout>
         <Slidebar />
+        <div className="pl-[25%]  w-screen back text-white  ">
         <Comp />
+        </div>
       </Layout>
     );
   };
@@ -39,8 +46,12 @@ export default function RoutesPage() {
       <HashRouter >
         <Routes>
           <Route>
-            <Route path="/:userName" element={publicRoutes(Display)} />
-            <Route path="/" element={<Navigate replace to={`/${userData.userName}`} />} />
+            <Route path="/profile/:userName/home" element={publicRoutes(Home)} />
+            <Route path="/profile/:userName/about" element={publicRoutes(About)} />
+            <Route path="/profile/:userName/resume" element={publicRoutes(Resume)} />
+            <Route path="/profile/:userName/projects" element={publicRoutes(Projects)} />
+            <Route path="/profile/:userName/contact" element={publicRoutes(Contact)} />
+            <Route path="/" element={<Navigate replace to={`/profile/${userData.userName}/home`} />} />
             <Route path="/errorPage" element={<ErrorPage/>} />
             <Route path="/admin" element={handleProtectedRoutes(AdminPage)} />
             <Route path="/adminLogin" element={publicRoutes(AdminLogin)} />

@@ -2,6 +2,7 @@ import Typewriter from "typewriter-effect";
 import GraphemeSplitter from "grapheme-splitter";
 import { useSelector} from "react-redux";
 import {userSelect} from '../../redux/actions';
+import { Link } from "react-router-dom";
 import "../../App.css";
 
 export default function Home() {
@@ -42,7 +43,8 @@ export default function Home() {
         data-aos="zoom-out-up"
         data-aos-delay="1400"
       >
-        <a href="#contact">Contact Me</a>
+        <Link to={`/profile/${userData.userName}/contact`}>Contact Me</Link>
+        {/* <a href="#contact">Contact Me</a> */}
       </button>
       <div
         className=" cursor-pointer w-fit left-[62%] absolute bottom-16"
@@ -50,8 +52,8 @@ export default function Home() {
         data-aos-offset="20"
         data-aos-delay="2000"
       >
-        <a href="#about" className="text-slate-400">
-          <svg
+        <Link to={`/profile/${userData.userName}/about`}>
+        <svg
             width="24"
             height="24"
             xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +64,11 @@ export default function Home() {
           >
             <path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm5.247 8l-5.247 6.44-5.263-6.44-.737.678 6 7.322 6-7.335-.753-.665z" />
           </svg>
-        </a>
+        </Link>
+
+        {/* <a href="#about" className="text-slate-400"> */}
+         
+        {/* </a> */}
       </div>
     </div>
   );

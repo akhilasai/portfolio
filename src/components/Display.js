@@ -11,14 +11,6 @@ import { useDispatch } from "react-redux";
 import "../App.css";
 
 export default function Display() {
-  const dispatch=useDispatch()
-  const {userName}=useParams()
-  console.log(userName)
-  useEffect(()=>{
-    if(userName){
-      getUserDetailsByUserName(dispatch,userName.toLowerCase())
-    }
-  },[userName])
   return (
     <div className="pl-[25%]  w-screen back text-white  ">
       <Home />
