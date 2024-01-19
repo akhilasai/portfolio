@@ -46,12 +46,13 @@ export default function RoutesPage() {
       <HashRouter >
         <Routes>
           <Route>
+            <Route path="/profile/:userName" element={publicRoutes(Display)} />
             <Route path="/profile/:userName/home" element={publicRoutes(Home)} />
             <Route path="/profile/:userName/about" element={publicRoutes(About)} />
             <Route path="/profile/:userName/resume" element={publicRoutes(Resume)} />
             <Route path="/profile/:userName/projects" element={publicRoutes(Projects)} />
             <Route path="/profile/:userName/contact" element={publicRoutes(Contact)} />
-            <Route path="/" element={<Navigate replace to={`/profile/${userData.userName}/home`} />} />
+            <Route path="/" element={<Navigate replace to={`/profile/${userData.userName}`} />} />
             <Route path="/errorPage" element={<ErrorPage/>} />
             <Route path="/admin" element={handleProtectedRoutes(AdminPage)} />
             <Route path="/adminLogin" element={publicRoutes(AdminLogin)} />
