@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter,Navigate  } from "react-router-dom";
 import App from "./App";
 import AdminPage from "./adminPages";
 import Layout from "./Layout/Layout";
@@ -40,6 +40,7 @@ export default function RoutesPage() {
         <Routes>
           <Route>
             <Route path="/:userName/profile" element={publicRoutes(Display)} />
+            <Route path="/" element={<Navigate replace to={`/${userData.userName}/profile`} />} />
             <Route path="/errorPage" element={<ErrorPage/>} />
             <Route path="/admin" element={handleProtectedRoutes(AdminPage)} />
             <Route path="/adminLogin" element={publicRoutes(AdminLogin)} />
